@@ -7,7 +7,8 @@
 
 SRC	=	\
 	src/strlen.asm	\
-	src/strchr.asm
+	src/strchr.asm	\
+	src/strrchr.asm
 
 BUILD	=	build
 
