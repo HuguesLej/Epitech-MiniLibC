@@ -1,0 +1,5 @@
+main.c
+build
+*.o
+*.so
+a.out
