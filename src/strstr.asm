@@ -7,6 +7,9 @@ strstr:
     XOR RAX, RAX
     XOR RCX, RCX
     XOR RDX, RDX
+    MOV R8B, BYTE [RDI]
+    CMP R8B, 0
+    JE end
     MOV R9B, BYTE [RSI]
     CMP R9B, 0
     JE rsi_zero
@@ -24,7 +27,7 @@ char_cmp:
     JMP return_to_char_cmp
 
 store_rdi:
-    MOV RAX, [RDI + RCX]
+    LEA RAX, [RDI + RCX]
     MOV R10, RCX
 
 cmp_needle:
