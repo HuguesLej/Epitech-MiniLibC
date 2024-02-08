@@ -10,7 +10,8 @@ SRC	=	\
 	src/strchr.asm	\
 	src/strrchr.asm	\
 	src/memset.asm	\
-	src/memcpy.asm
+	src/memcpy.asm	\
+	src/strcmp.asm
 
 BUILD	=	build
 
