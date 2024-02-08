@@ -4,6 +4,8 @@ SECTION .text
 GLOBAL memmove
 
 memmove:
+    CMP RDX, 0
+    JE end
     XOR RCX, RCX
     JMP copy_src
 
