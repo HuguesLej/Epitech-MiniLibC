@@ -17,3 +17,4 @@ loop:
 
 end:
     MOV RAX, RDI
+    RET
