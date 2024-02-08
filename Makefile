@@ -12,7 +12,8 @@ SRC	=	\
 	src/memset.asm	\
 	src/memcpy.asm	\
 	src/strcmp.asm	\
-	src/memmove.asm
+	src/memmove.asm	\
+	src/strncmp.asm
 
 BUILD	=	build
 
@@ -20,9 +21,9 @@ AS	=	nasm
 
 ASFLAGS	=	-f elf64
 
-CC	=	gcc
+LD	=	ld
 
-CCFLAGS	=	-shared
+LDFLAGS	=	-shared
 
 OBJ	=	$(SRC:%.asm=$(BUILD)/%.o)
 
@@ -42,7 +43,7 @@ $(BUILD)/%.o: %.asm
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	@gcc -o $(NAME) $(OBJ) $(CCFLAGS)
+	@$(LD) -o $(NAME) $(OBJ) $(LDFLAGS)
 	@echo -e "\033[1;36m[$(NAME)]: Successfully build\033[0m"
 	@echo -e "\033[1;36mCompiled $(shell echo "$?" | wc -w) file(s)\033[0m"
 
