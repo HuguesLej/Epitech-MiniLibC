@@ -10,6 +10,13 @@ memmove:
     JE end
     SUB RSP, RDX
     XOR RCX, RCX
+    CMP RSI, 0
+    JE verify_snd_str
+    JMP copy_src
+
+verify_snd_str:
+    CMP RDI, 0
+    JE end
     JMP copy_src
 
 copy_src:

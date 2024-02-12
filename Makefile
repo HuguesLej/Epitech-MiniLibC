@@ -17,7 +17,8 @@ SRC	=	\
 	src/strcasecmp.asm	\
 	src/strstr.asm		\
 	src/strpbrk.asm		\
-	src/strcspn.asm
+	src/strcspn.asm		\
+	src/my_memmove.asm
 
 BUILD	=	build
 
