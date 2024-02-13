@@ -23,7 +23,7 @@ check_case_r8:
     CMP R8B, 'Z'
     JG check_case_r9
     ADD R8B, 32
-    JMP case_compare
+    JMP check_case_r9
 
 check_case_r9:
     CMP R9B, 'A'
