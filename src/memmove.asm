@@ -4,42 +4,39 @@ SECTION .text
 GLOBAL memmove
 
 memmove:
-    PUSH RBP
-    MOV RBP, RSP
     CMP RDX, 0
     JE end
-    SUB RSP, RDX
-    XOR RCX, RCX
     CMP RSI, 0
     JE verify_snd_str
-    JMP copy_src
+    JMP choose_loop
 
 verify_snd_str:
     CMP RDI, 0
     JE end
-    JMP copy_src
+    JMP choose_loop
 
-copy_src:
-    CMP RCX, RDX
-    JE reinit_rcx
-    MOV AL, BYTE [RSI + RCX]
-    MOV BYTE [RSP + RCX], AL
-    INC RCX
-    JMP copy_src
-
-reinit_rcx:
+choose_loop:
     XOR RCX, RCX
-    JMP move_loop
+    CMP RDI, RSI
+    JLE move_inc
+    JMP move_dec
 
-move_loop:
+move_inc:
     CMP RCX, RDX
     JE end
-    MOV AL, BYTE [RSP + RCX]
+    MOV AL, BYTE [RSI + RCX]
     MOV BYTE [RDI + RCX], AL
     INC RCX
-    JMP move_loop
+    JMP move_inc
+
+move_dec:
+    CMP RDX, 0
+    JE end
+    MOV AL, BYTE [RSI + RDX - 1]
+    MOV BYTE [RDI + RDX - 1], AL
+    DEC RDX
+    JMP move_dec
 
 end:
     MOV RAX, RDI
-    LEAVE
     RET
