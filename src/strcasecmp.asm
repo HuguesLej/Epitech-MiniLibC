@@ -8,7 +8,7 @@ strcasecmp:
     MOV R9B, BYTE [RSI]
 
     CMP R8B, 0
-    JE check_case_r8
+    JE check_case_r9
     CMP R9B, 0
     JE check_case_r8
 
@@ -27,15 +27,19 @@ check_case_r8:
 
 check_case_r9:
     CMP R9B, 'A'
-    JL calc_diff
+    JL case_compare
     CMP R9B, 'Z'
-    JG calc_diff
+    JG case_compare
     ADD R9B, 32
     JMP case_compare
 
 case_compare:
     CMP R8B, R9B
     JNE calc_diff
+    CMP R8B, 0
+    JE calc_diff
+    CMP R9B, 0
+    JE calc_diff
     JMP increase_strings
 
 increase_strings:
