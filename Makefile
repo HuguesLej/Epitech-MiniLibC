@@ -35,7 +35,11 @@ TEST_SRC	=	\
 	tests/strcasecmp.c	\
 	tests/strstr.c		\
 	tests/strpbrk.c		\
-	tests/strcspn.c
+	tests/strcspn.c		\
+	\
+	tests/ffs.c			\
+	tests/index.c		\
+	tests/rindex.c
 
 BUILD	=	build
 
