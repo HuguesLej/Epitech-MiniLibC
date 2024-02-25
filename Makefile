@@ -20,7 +20,8 @@ SRC	=	\
 	src/strcspn.asm		\
 	\
 	bonus/ffs.asm		\
-	bonus/index.asm
+	bonus/index.asm		\
+	bonus/rindex.asm
 
 TEST_SRC	=	\
 	tests/strlen.c		\
