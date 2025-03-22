@@ -180,17 +180,6 @@ To use this program, you need to install some tools:
 - [GNU Make](https://www.gnu.org/software/make/)
 - [Criterion](https://criterion.readthedocs.io/en/master/setup.html) (only if you want to run the unit tests)
 
-## How to use
-
-### Requirements
-
-To use this program, you need to install some tools:
-- [nasm](https://www.nasm.us/)
-- [GNU Binutils](https://www.gnu.org/software/binutils/)
-- [GCC](https://gcc.gnu.org/)
-- [GNU Make](https://www.gnu.org/software/make/)
-- [Criterion](https://criterion.readthedocs.io/en/master/setup.html) (only if you want to run the unit tests)
-
 ### Usage
 
 To compile the library, run:
