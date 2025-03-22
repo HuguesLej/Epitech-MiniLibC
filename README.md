@@ -1,6 +1,6 @@
 # MinilibC - Going deeper into the rabbit hole
 
-MinilibC is an {Epitech} 2nd year projet. It's part of the *x86-64 Assembly* module.
+MinilibC is an {Epitech} 2nd year project. It's part of the *x86-64 Assembly* module.
 
 **⚠️ If you're an Epitech student, be aware that copying any part of this code is considered cheating and would cause an -42!**
 
